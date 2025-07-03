@@ -222,13 +222,8 @@ font-style: italic;
 margin-top: 5px;
 }
 
-#imagee{
-width:230px;
-height:70px;
-}
-
 .toggle-content {
-    display: none;
+    display: block !important;
     padding-left: 15px;
 }
 
@@ -238,6 +233,7 @@ height:70px;
 }
 
 .toggle-button, .sub-toggle-button {
+    display:block;
     cursor: pointer;
     user-select: none;
     padding: 5px 0;
