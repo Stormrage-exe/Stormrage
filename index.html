@@ -1,3 +1,5 @@
+<!-- please don't check out my html it's embarassing --> 
+<!-- i'm trying my best alright --> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,13 +34,14 @@
             </div>
             
             <div class="sidebar-section">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                </ul>
-            </div>
+                <h3>Site Stats</h3>
+ <div class="stats-container" id="timeOnSite">
+        <div class="stat-title">⏱️ YOUR CURRENT SESSION</div>
+        <div class="stat-value" id="currentTime">0:00</div>
+        <div class="sass-comment" id="timeComment">"Let the stalking begin..."</div>
+    </div>
+
+</div>
             
             <div class="sidebar-section">
                 <h3>Updates</h3>
@@ -58,8 +61,7 @@
         
         <div class="sidebar">
             <div class="sidebar-section">
-                <h3>Stuff</h3>
-                <p>Random things go here.</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxMtd4p0ZPNOMhZ35Gz30gxxI58B3gcweh9w&s" id="imagee"/>
             </div>
             
             <div class="sidebar-section">
@@ -116,5 +118,63 @@
             canvas.height = window.innerHeight;
         });
     </script>
+
+<script>
+        let startTime = localStorage.getItem('sessionStartTime');
+        let totalSeconds = 0;
+        
+        if (!startTime || (Date.now() - startTime) > 1800000) {
+            startTime = Date.now();
+            localStorage.setItem('sessionStartTime', startTime);
+        }
+
+        const timer = setInterval(() => {
+            totalSeconds = Math.floor((Date.now() - startTime) / 1000);
+            const mins = Math.floor(totalSeconds / 60);
+            const secs = totalSeconds % 60;
+            
+            document.getElementById('currentTime').textContent = 
+                `${mins}:${secs.toString().padStart(2, '0')}`;
+            
+            updateSassComment(totalSeconds);
+        }, 1000);
+
+        window.addEventListener('beforeunload', () => {
+            const sessions = JSON.parse(localStorage.getItem('siteSessions') || '[]');
+            sessions.push(totalSeconds);
+            localStorage.setItem('siteSessions', JSON.stringify(sessions));
+        });
+
+        function updateSassComment(seconds) {
+            const comments = [
+                { threshold: 10, messages: [
+                    "Welcome!"
+                ]},
+                { threshold: 40, messages: [
+                    "Getting comfortable?"
+                ]},
+                { threshold: 70, messages: [
+                    "Someone's actually reading."
+                ]},
+                { threshold: 180, messages: [
+                    "Are you taking notes or what?"
+                ]},
+                { threshold: 300, messages: [
+                    "This is getting serious"
+                ]},
+                { threshold: 500, messages: [
+                    "Are you still alive?"
+                ]},
+                { threshold: 700, messages: [
+                    "Hello,police?"
+                ]}
+            ];
+            
+            const tier = comments.findLast(t => seconds >= t.threshold) || comments[0];
+            const message = tier.messages[Math.floor(Math.random() * tier.messages.length)];
+            document.getElementById('timeComment').textContent = `"${message}"`;
+        }
+    </script>
+
 </body>
 </html>
