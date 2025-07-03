@@ -36,7 +36,7 @@ nav {
     height: 40px;
     display: flex;
     align-items: center;
-    border-radius: 28px;
+    border-radius:20px;
     width: 1100px; 
     justify-content: center;
 }
@@ -164,11 +164,30 @@ canvas {
     font: normal normal bold 20px verdana;
     color: #ffffff;
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
+
 .button:hover,
 .button:active,
 .button:focus {
     border: 1px solid #00ff3b;
     color: #ffffff;
     text-decoration: none;
+    box-shadow: 0 0 20px #0dff00, 0 0 30px #0dff00, 0 0 40px #0dff00;
+    transform: scale(1.02);
 }
+
+.button:hover::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 50px;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    animation: shine 3s infinite;
+}
+
