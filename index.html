@@ -65,9 +65,21 @@
             </div>
             
             <div class="sidebar-section">
-                <h3>More Stuff</h3>
-                <p>Even more random things.</p>
+    <h3 class="toggle-button">Fun stuff</h3>
+    <div class="toggle-content">
+        <h4 class="sub-toggle-button">Stamps/Blinkies</h4>
+        <div class="sub-toggle-content">
+            <div class="blinkie-container">
+                
             </div>
+            <div class="blinkie-gallery">
+              <img src="https://64.media.tumblr.com/3c15c144364cc709e08fb34900b3c7fb/c0478bb7d507d85b-9d/s100x200/ab5868cca09ff0668c3704358bad116a57304cfa.pnj">
+              <img src="https://64.media.tumblr.com/3c15c144364cc709e08fb34900b3c7fb/c0478bb7d507d85b-9d/s100x200/ab5868cca09ff0668c3704358bad116a57304cfa.pnj">
+              <img src="https://64.media.tumblr.com/3c15c144364cc709e08fb34900b3c7fb/c0478bb7d507d85b-9d/s100x200/ab5868cca09ff0668c3704358bad116a57304cfa.pnj">
+            </div>pnj">
+        </div>
+    </div>
+</div>
             
          <div class="sidebar-section">
                 <h3>I'm listening to:</h3>
@@ -75,7 +87,7 @@
             </div>
 
             <div class="sidebar-section">
-                <iframe src="https://www5.cbox.ws/box/?boxid=957616&boxtag=PlCiBK" width="100%" height="250" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+                <iframe src="https://www5.cbox.ws/box/?boxid=957616&boxtag=PlCiBK" width="100%" height="230" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
             </div>
 
         </div>
@@ -175,6 +187,29 @@
             document.getElementById('timeComment').textContent = `"${message}"`;
         }
     </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.toggle-button');
+    const toggleContent = document.querySelector('.toggle-content');
+    
+    const subToggleButton = document.querySelector('.sub-toggle-button');
+    const subToggleContent = document.querySelector('.sub-toggle-content');
+    
+    toggleButton.addEventListener('click', function() {
+        this.classList.toggle('active');
+        toggleContent.style.display = toggleContent.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    subToggleButton.addEventListener('click', function() {
+        this.classList.toggle('active');
+        subToggleContent.style.display = subToggleContent.style.display === 'block' ? 'none' : 'block';
+    });
+    
+    toggleContent.style.display = 'none';
+    subToggleContent.style.display = 'none';
+});
+</script>
 
 </body>
 </html>
