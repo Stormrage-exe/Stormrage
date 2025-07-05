@@ -265,7 +265,8 @@ margin-top: 5px;
 }
 
 .blinkie-gallery img {
-    max-width: 130px;
+    min-width: 110px;
+    max-width: 120px;
     height: auto;
     display: block; 
 }
