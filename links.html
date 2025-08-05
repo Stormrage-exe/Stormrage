@@ -191,6 +191,12 @@
                 <iframe src="https://www5.cbox.ws/box/?boxid=957616&boxtag=PlCiBK" width="100%" height="230" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
             </div>
 
+ <div class="visitor-counter">
+        <div class="counter-title">Visitors to this site:</div>
+        <div class="counter-number" id="counter">0</div>
+        <div class="counter-footer">Thanks for stopping by!</div>
+    </div>
+
         </div>
     </div>
     </div>
@@ -311,6 +317,30 @@ document.addEventListener('DOMContentLoaded', function() {
     subToggleContent.style.display = 'none';
 });
 </script>
+
+    <script>
+        if (typeof(Storage) !== "undefined") {
+            let count = localStorage.getItem('visitorCount');
+            if (count === null) {
+                count = 0;
+            } else {
+                count = parseInt(count);
+            }
+
+            count++;
+            localStorage.setItem('visitorCount', count);
+            
+            const counterElement = document.getElementById('counter');
+            counterElement.textContent = count;
+            counterElement.classList.add('animated');
+            
+            setTimeout(() => {
+                counterElement.classList.remove('animated');
+            }, 500);
+        } else {
+            document.getElementById('counter').textContent = "Many!";
+        }
+    </script>
 
 </body>
 </html>
