@@ -394,12 +394,15 @@ margin: auto;
             display: inline-block;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
+            display: block;
+margin: auto; 
         }
         
         .counter-title {
             font-size: 16px;
             color: #ffffff;
             margin-bottom: 5px;
+            
         }
         
         .counter-number {
