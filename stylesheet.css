@@ -314,6 +314,13 @@ width:230px;
 height:340px;
 }
 
+#hehe4{
+width:220px;
+height:180px;
+display: block;
+margin: auto; 
+}
+
 
 .blog-container {
   width: 100%;
@@ -323,7 +330,7 @@ height:340px;
 }
 
 .blog-scroll {
-  max-height: 500px; 
+  max-height: 550px; 
   overflow-y: auto;
   padding: 10px;
   border: 1px solid #e0e0e0;
