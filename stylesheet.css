@@ -393,4 +393,10 @@ margin: auto;
   margin: 8px 0;
 }
 
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
         
