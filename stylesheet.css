@@ -11,9 +11,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    min-width: 1000px; 
     box-sizing: border-box;
-    overflow: hidden;
+    min-width: 1000px;
+    overflow-x: auto; 
+    overflow-y: visible; 
+    zoom: 1; 
+    touch-action: manipulation;
+   
 
 }
 
@@ -22,7 +26,8 @@ a {
 }
 
 .container {
-    width: 1100px;
+  width: 100%;
+    max-width: 1100px;
     display: flex;
     gap: 15px;
     margin: 25px 0;
@@ -37,8 +42,9 @@ nav {
     display: flex;
     align-items: center;
     border-radius:20px;
-    width: 1100px; 
     justify-content: center;
+      width: 100%;
+    max-width: 1100px;
 }
 
 
@@ -86,12 +92,13 @@ nav a:hover {
 }
 
 .main-content {
-    width: 500px; 
     background-color: #000000;
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 2px 5px #40ff49;
     min-height: 700px;
+     width: 100%;
+    max-width: 500px;
     
 }
 
@@ -431,3 +438,5 @@ margin: auto;
         .animated {
             animation: pulse 0.5s;
         }
+
+        
