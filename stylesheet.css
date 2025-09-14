@@ -409,10 +409,10 @@ margin: auto;
 }
 
 .updatessection {
-  max-height: 350px; /* Set a fixed height */
-  overflow-y: auto;  /* Enable vertical scrolling */
+  max-height: 270px;
+  overflow-y: auto; 
   padding: 10px;
-  border: 1px solid #1a3b1a; /* Match your site's style */
+  border: 1px solid #1a3b1a; 
   border-radius: 8px;
   background-color: #000000;
 }
