@@ -102,6 +102,8 @@ nav a:hover {
     
 }
 
+
+
 .sidebar-section {
     margin-bottom: 25px;
     padding-bottom: 15px;
@@ -404,6 +406,44 @@ margin: auto;
   color: #40ff49;
   line-height: 1.5;
   margin: 8px 0;
+}
+
+.updatessection {
+  max-height: 350px; /* Set a fixed height */
+  overflow-y: auto;  /* Enable vertical scrolling */
+  padding: 10px;
+  border: 1px solid #1a3b1a; /* Match your site's style */
+  border-radius: 8px;
+  background-color: #000000;
+}
+
+.updatessection::-webkit-scrollbar {
+  width: 8px;
+}
+
+.updatessection::-webkit-scrollbar-track {
+  background: #0a1f0a;
+  border-radius: 4px;
+}
+
+.updatessection::-webkit-scrollbar-thumb {
+  background: #2a7d2f;
+  border-radius: 4px;
+}
+
+.updatessection::-webkit-scrollbar-thumb:hover {
+  background: #40ff49;
+}
+
+.updatessection p {
+  padding: 8px 5px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #1a3b1a;
+  color: #40ff49;
+}
+
+.updatessection p:last-child {
+  border-bottom: none;
 }
 
 .counter-container {
